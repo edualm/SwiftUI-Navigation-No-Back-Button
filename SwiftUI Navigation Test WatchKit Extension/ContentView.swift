@@ -7,10 +7,20 @@
 
 import SwiftUI
 
+struct ContentView2: View {
+    var body: some View {
+        Text("Child View")
+            .navigationTitle("Child View")
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        NavigationView {
+            NavigationLink(destination: ContentView2()) {
+                Text("To Child View")
+            }
+        }.navigationTitle("Main View")
     }
 }
 
